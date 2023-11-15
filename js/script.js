@@ -35,12 +35,23 @@ createApp({
         this.toDoListElem.text = "";
 
       }
-        
-
     },
+
     deleteItem: function (index) {
       this.toDoList.splice(index, 1)
-    }
+    },
+
+    doneNotDone: function(index) {
+      if(this.toDoList[index].done === false) {
+
+        this.toDoList[index].done = true;
+
+      } else {
+
+        this.toDoList[index].done = false;
+
+      }
+    },
 
   },
 
