@@ -4,6 +4,47 @@
     justify-content: center;
 }
 
+
+/* main */
+body {
+    background-image: url(../img/bg-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title {
+    font-family: 'Abril Fatface', serif;
+    font-size: 5rem;
+}
+
+#input-todo {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#input-todo:focus-visible {
+    outline: none;
+}
+
+.list-item,
+.input-section {
+    font-size: 1.2rem;
+}
+
+.list-section,
+.top-section {
+    width: 50%;
+    border-radius: 20px;
+    background-color: #ffffff79;
+}
+
+.list-group-item {
+    background-color: #b0987b99;
+}
 .done {
-    text-decoration: line-through;
+    text-decoration-line: line-through;
+}
+
+.remove-item {
+    color: #f44336;
 }

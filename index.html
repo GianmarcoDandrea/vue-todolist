@@ -8,6 +8,11 @@
     <!-- link to bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <!-- link to google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
     <!-- link to css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,30 +23,35 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="d-flex align-items-center flex-column">
+        <div class="top-section mt-3">
 
-        <div class="title-section text-center mt-3">
-            <h1 class="">To Do List</h1>
+            <div class="text-center mt-3">
+                <h1 class="title ">To Do List</h1>
+            </div>
+    
+            <div class="input-section d-flex flex-column flex-center">
+                <!-- input section -->
+                <label for="input-todo" class="mb-2">Inserisci le tue cose da fare</label>
+                <input 
+                type="text" 
+                name="input-todo" 
+                id="input-todo" 
+                class="w-25 rounded-2" 
+                v-model="toDoListElem.text"
+                @keyup.enter="addItem">
+    
+                <!-- button section -->
+                <button class="btn border mt-2" @click="addItem">Aggiungi</button>
+            </div>
+
         </div>
 
-        <div class="input-section d-flex flex-column flex-center">
-            <!-- input section -->
-            <label for="input-todo" class="mb-2">Inserisci le cose da fare</label>
-            <input 
-            type="text" 
-            name="input-todo" 
-            id="input-todo" 
-            class="w-25 rounded-2" 
-            v-model="toDoListElem.text"
-            @keyup.enter="addItem">
+        <div class="list-section mt-5">
 
-            <!-- button section -->
-            <button class="btn border" @click="addItem">Aggiungi</button>
-        </div>
-
-        <div class="list-section">
-            <ul class="d-flex flex-column align-items-center">
-                <li v-for="(item, index) in toDoList" :key="index" class="list-group-item w-50 border rounded-2 my-1 px-2 py-1 d-flex justify-content-between">
+            <h3 class="text-center mt-3">La tua lista</h3>
+            <ul class="d-flex flex-column align-items-center ">
+                <li v-for="(item, index) in toDoList" :key="index" class="list-group-item w-75 rounded-2 my-1 px-2 py-1 d-flex justify-content-between align-items-center">
                     <div class="list-item" @click="doneNotDone(index)"  :class="{'done' : (this.toDoList[index].done === true)}">
                         {{ toDoList[index].text }}
                     </div>
