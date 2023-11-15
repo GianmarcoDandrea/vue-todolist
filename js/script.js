@@ -4,7 +4,13 @@ createApp({
   // DATA SECTION
   data() {
     return {
-      toDoListElem: "",
+
+      toDoListElem: {
+
+        text:"",
+        done: false,
+
+      },
 
 
       toDoList:[],
@@ -14,18 +20,19 @@ createApp({
   },
 
 
+
   // METHODS SECTION
   methods: {
     addItem: function() {
 
-      if( this.toDoListElem === "") {
+      if( this.toDoListElem.text === "") {
 
         alert("Inserisci un testo")
 
       } else {
 
-        this.toDoList.push(this.toDoListElem)
-        this.toDoListElem = "";
+        this.toDoList.push({...this.toDoListElem});
+        this.toDoListElem.text = "";
 
       }
         
@@ -36,9 +43,6 @@ createApp({
     }
 
   },
-
-
-
 
 
 }).mount('#app')
