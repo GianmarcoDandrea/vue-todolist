@@ -26,6 +26,14 @@ body {
     outline: none;
 }
 
+.btn {
+    background-color: #b0987b99;
+}
+
+.btn:hover {
+    background-color: #b0987b99;
+}
+
 .list-item,
 .input-section {
     font-size: 1.2rem;
@@ -41,6 +49,7 @@ body {
 .list-group-item {
     background-color: #b0987b99;
 }
+
 .done {
     text-decoration-line: line-through;
 }
