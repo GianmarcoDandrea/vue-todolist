@@ -35,8 +35,8 @@ createApp({
       }
     },
 
-    deleteItem: function (index) {
-      this.toDoList.splice(index, 1)
+    deleteItem: function (clickedIndex) {
+      this.toDoList.splice(clickedIndex, 1)
     },
 
     doneNotDone: function (index) {
