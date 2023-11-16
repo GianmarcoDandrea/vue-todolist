@@ -39,7 +39,7 @@
             <div class="input-section d-flex flex-column flex-center">
                 <!-- input section -->
                 <label for="input-todo" class="mb-2">Inserisci le tue cose da fare</label>
-                <input type="text" name="input-todo" id="input-todo" class="w-50 rounded-2" v-model="toDoListElem.text"
+                <input type="text" name="input-todo" id="input-todo" class="w-50 rounded-2" v-model.trim="toDoListElem.text"
                     @keyup.enter="addItem">
 
                 <!-- button section -->
